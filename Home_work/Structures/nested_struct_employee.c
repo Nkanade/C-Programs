@@ -17,7 +17,7 @@ struct date
     
     int day;
     int month;
-    int year;                                   // time_t is the data type for time and t is variable;
+    int year;                                 
     struct employee s1;
    
 }dt;
@@ -25,7 +25,7 @@ struct date
 int main()
 {
     
-    //time(&dt.t);                                    // time() function in time.h header file used;
+ 
     printf("Enter The Employee Details !!!");
     printf("\nEnter The Employee Id :");
     scanf("%d",&dt.s1.emp_id);
@@ -38,8 +38,7 @@ int main()
         
     //printing the output
     printf("\nEmployee_Id=%d \nEmployee_name=%s \nEmployee_salary=%d ",dt.s1.emp_id,dt.s1.emp_name,dt.s1.emp_sal);
-    //printf("\nJoining_Date=%s",ctime(&dt.t));      // ctime() function in time.h header file is used
-                                                    // which is used to print current system time
+   
 
                                                     
     printf("Joinnig_Date=%d\t%d\t%d",dt.day,dt.month,dt.year);
