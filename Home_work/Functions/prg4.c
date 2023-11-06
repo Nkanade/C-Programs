@@ -1,4 +1,5 @@
-//Q6.
+/*Q6. Write a function that accepts two parameters as integers.The function should add the two integers and return the result.
+The result should be printed in main().*/
 #include<stdio.h>
 
 int addition(int a,int b);
