@@ -1,9 +1,9 @@
-// Q13.*
+/*Q13. Write a function which accept a limit to print finonacci series in a function.*/
 
 
 #include<stdio.h>
 
-void fibonacci();
+void fibonacci();                                        // Function Declaration.
 
 
 int main()
@@ -11,13 +11,13 @@ int main()
 
     
     printf("This Is Fibonacci Series Program");
-     fibonacci();
-   // printf("\n Fibonacci series Is =%d",ss);
+     fibonacci();                                        // Function Calling.
+   
 
 
 }
 
-void fibonacci()
+void fibonacci()                                        // Function Defination.
 {
 
     int num,nth,i;
@@ -25,7 +25,7 @@ void fibonacci()
     printf("\n Enter a Number :");
     scanf("%d",&num);
 
-   for (int i = 1; i <= num; i++) { 
+   for (int i = 1; i <= num; i++) {                             // Calculating Fibonacci Series
         if (i > 2) { 
             int nth = n1 + n2; 
             n2 = n1; 
