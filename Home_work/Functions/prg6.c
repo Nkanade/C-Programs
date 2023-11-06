@@ -1,4 +1,4 @@
-// Q8 /*Calculate the power of a number. Both power and number should be accepted from the user and passed to the function.
+/* Q8.Calculate the power of a number. Both power and number should be accepted from the user and passed to the function.
 The result should be printed in main().*/
 #include<stdio.h>
 
