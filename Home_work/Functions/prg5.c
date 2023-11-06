@@ -1,4 +1,4 @@
-//Q7./* Write a function to check whether the 3-digit number is an Armstrong number.If it is, print the message -"it is an Armstrong Number "
+/* Q7. Write a function to check whether the 3-digit number is an Armstrong number.If it is, print the message -"it is an Armstrong Number "
 else print that "It Is not Armstrong ". Accept the Number from the user in main().*/
 #include<stdio.h>
 
