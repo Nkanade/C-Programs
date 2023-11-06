@@ -1,4 +1,4 @@
-//Q15 /*Check whether the accepted character is an alphabet.Display the message accordingly in main.*/
+/*Q15.Check whether the accepted character is an alphabet.Display the message accordingly in main.*/
 
 #include<stdio.h>
 int check();                                    // Function Declaration
