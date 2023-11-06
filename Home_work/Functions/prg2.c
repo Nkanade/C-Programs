@@ -1,4 +1,6 @@
-//Q4.
+/*Q4.Write a function that accepts a number as a parameter and prints if it is odd or even
+a. Write its prototype
+b. Call the function.*/
 #include<stdio.h>
 
 void oddEven(int a);
