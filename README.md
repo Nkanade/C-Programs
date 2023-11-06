@@ -7,7 +7,7 @@ Here You Can Find All The Programs That Can Be Asked In The Interview **
 2.Class_Program
 3. I/O Functions
 
-**Home_Work** - #.Arrays -> 2 Arrays
+**Home_Work** - #.Arrays -> 2D Arrays
                 #.DMA(Dynamic Memory Allocation)
                 #.Functions
                 #.Loops
