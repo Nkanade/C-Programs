@@ -1,8 +1,9 @@
-These are the some importat Queries for Interview .The table are present in Oracle Database HR Schemas
-you can practice the sqlplus queries online with the Oracle Live SQL .I have given the link below 
+These are the some Importat Queries for Interview .The table are present in Oracle Database HR Schemas
+you can practice the sqlplus queries online with the Oracle Live SQL .I have given the link below -
 LINK-https://livesql.oracle.com/apex/livesql/file/content_GV8MU6SITA2V3VYI179FAJUCY.html
 
 To Run The HR Schema Follow the Follwing Steps-
+
 Step1. Click On The Link 
 Step2. Click On Button "Login To Run Script"
 Step3. There Will Be Login Page  You Have To Login Or Sign up
@@ -10,24 +11,26 @@ Step4. Click On Button "Run Script"
 Step5. Click On Button "Perform Actions"
 Step6. Click On Button "SQL Worksheet"
 Step7. Then There Will Be IDE Open Now You Can Write A Query and Run It.
+--------------------------------------------------------------------------------------------------------------------------------
+********************************************************************************************************************************
 
 desc employees;				-- This command shows the table architecture.
 select *from employees;			-- This command shows all entities present in the table
-select table_name from all_tables;		-- This command will shows the all tables present in the database.
+select table_name from all_tables;	-- This command will shows the all tables present in the database.
 
 /*TABLE EMPLOYEES 
 Column	Null?	 	Type
 EMPLOYEE_ID		NOT NULL	NUMBER(6,0)
 FIRST_NAME	 		- 	VARCHAR2(20)
-LAST_NAME		NOT NULL	VARCHAR2(25)
+LAST_NAME		 NOT NULL	VARCHAR2(25)
 EMAIL	       		 NOT NULL	VARCHAR2(25)
-PHONE_NUMBER	  - 		VARCHAR2(20)
+PHONE_NUMBER	            - 		VARCHAR2(20)
 HIRE_DATE	   	 NOT NULL	DATE
-JOB_ID	        		NOT NULL	VARCHAR2(10)
-SALARY	           - 	   			 NUMBER(8,2)
-COMMISSION_PCT	   - 	    	NUMBER(2,2)
-MANAGER_ID	                  -  	    	NUMBER(6,0)
-DEPARTMENT_ID	   - 	   	 NUMBER(4,0)
+JOB_ID	        	 NOT NULL	VARCHAR2(10)
+SALARY	           	    -		NUMBER(8,2)
+COMMISSION_PCT	    	    -		NUMBER(2,2)
+MANAGER_ID	            -	 	NUMBER(6,0)
+DEPARTMENT_ID	    	    -	 	NUMBER(4,0)
 */
 
 --Q1. Display employee_id,first_name,salary and display new salary by multiplying salary by 12
@@ -96,11 +99,11 @@ DEPARTMENT_ID	   - 	   	 NUMBER(4,0)
 Location Table
 Column	Null?	Type
 LOCATION_ID	NOT NULL	NUMBER(4,0)
-STREET_ADDRESS	 - 	VARCHAR2(40)
-POSTAL_CODE	 - 	VARCHAR2(12)
-CITY	NOT NULL	VARCHAR2(30)
-STATE_PROVINCE	 - 	VARCHAR2(25)
-COUNTRY_ID	 - 	CHAR(2)*/
+STREET_ADDRESS	 - 		VARCHAR2(40)
+POSTAL_CODE	 - 		VARCHAR2(12)
+CITY	NOT NULL		VARCHAR2(30)
+STATE_PROVINCE	 - 		VARCHAR2(25)
+COUNTRY_ID	 - 		CHAR(2)*/
 
 
 --Q21. Display city and postal code from location table.
@@ -115,8 +118,8 @@ Column	Null?	Type
 EMPLOYEE_ID	NOT NULL	NUMBER(6,0)
 START_DATE	NOT NULL	DATE
 END_DATE	NOT NULL	DATE
-JOB_ID	NOT NULL	VARCHAR2(10)
-DEPARTMENT_ID	 - 	NUMBER(4,0)*/
+JOB_ID	NOT NULL		VARCHAR2(10)
+DEPARTMENT_ID	 - 		NUMBER(4,0)*/
 
 
 --Q23. Display employees id ,start date and end date from job history table.
@@ -128,10 +131,10 @@ DEPARTMENT_ID	 - 	NUMBER(4,0)*/
 /*
 TABLE JOBS
 Column	Null?	Type
-JOB_ID	NOT NULL	VARCHAR2(10)
+JOB_ID	NOT NULL		VARCHAR2(10)
 JOB_TITLE	NOT NULL	VARCHAR2(35)
-MIN_SALARY	 - 	NUMBER(6,0)
-MAX_SALARY	 - 	NUMBER(6,0)*/
+MIN_SALARY	 - 		NUMBER(6,0)
+MAX_SALARY	 - 		NUMBER(6,0)*/
 
 
 --Q25. Display All Jobs availabels in jobs table.
@@ -143,7 +146,7 @@ MAX_SALARY	 - 	NUMBER(6,0)*/
 /*TABLE REGIONSResult Set 21
 Column	Null?	Type
 REGION_ID	NOT NULL	NUMBER
-REGION_NAME	 - 	VARCHAR2(25)
+REGION_NAME	 - 		VARCHAR2(25)
 */
 
 
@@ -157,8 +160,8 @@ REGION_NAME	 - 	VARCHAR2(25)
 /*TABLE COUNTRIES
 Column	Null?	Type
 COUNTRY_ID	NOT NULL	CHAR(2)
-COUNTRY_NAME	 - 	VARCHAR2(40)
-REGION_ID	 - 	NUMBER
+COUNTRY_NAME	 - 		VARCHAR2(40)
+REGION_ID	 - 		NUMBER
 */
 
 --Q29. Display country id ,name from countries table.
@@ -180,7 +183,7 @@ select first_name,last_name,salary from employees where salary >=20000 or last_n
 --Q34. Display System Date.
 	SELECT TO_CHAR
     (SYSDATE, 'MM-DD-YYYY')
-     FROM DUAL;		  -- DUAL is a Virtual Table or a DUMMY Table Created when it get call it contains one row with varchar(2) datatype.
+     FROM DUAL;	   -- DUAL is a Virtual Table or a DUMMY Table Created when it get call it contains one row with varchar(2) datatype.
 
 
 --Q35. Display Employees list present from 01-01-96 to 29-01-96
