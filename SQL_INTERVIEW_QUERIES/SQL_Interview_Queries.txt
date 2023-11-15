@@ -1,0 +1,218 @@
+These are the some Importat Queries for Interview .The table are present in Oracle Database HR Schemas
+you can practice the sqlplus queries online with the Oracle Live SQL .I have given the link below -
+LINK-https://livesql.oracle.com/apex/livesql/file/content_GV8MU6SITA2V3VYI179FAJUCY.html
+
+To Run The HR Schema Follow the Follwing Steps-
+
+Step1. Click On The Link 
+Step2. Click On Button "Login To Run Script"
+Step3. There Will Be Login Page  You Have To Login Or Sign up
+Step4. Click On Button "Run Script"
+Step5. Click On Button "Perform Actions"
+Step6. Click On Button "SQL Worksheet"
+Step7. Then There Will Be IDE Open Now You Can Write A Query and Run It.
+--------------------------------------------------------------------------------------------------------------------------------
+********************************************************************************************************************************
+
+desc employees;				-- This command shows the table architecture.
+select *from employees;			-- This command shows all entities present in the table
+select table_name from all_tables;	-- This command will shows the all tables present in the database.
+
+/*TABLE EMPLOYEES 
+Column	Null?	 	Type
+EMPLOYEE_ID		NOT NULL	NUMBER(6,0)
+FIRST_NAME	 		- 	VARCHAR2(20)
+LAST_NAME		 NOT NULL	VARCHAR2(25)
+EMAIL	       		 NOT NULL	VARCHAR2(25)
+PHONE_NUMBER	            - 		VARCHAR2(20)
+HIRE_DATE	   	 NOT NULL	DATE
+JOB_ID	        	 NOT NULL	VARCHAR2(10)
+SALARY	           	    -		NUMBER(8,2)
+COMMISSION_PCT	    	    -		NUMBER(2,2)
+MANAGER_ID	            -	 	NUMBER(6,0)
+DEPARTMENT_ID	    	    -	 	NUMBER(4,0)
+*/
+
+--Q1. Display employee_id,first_name,salary and display new salary by multiplying salary by 12
+	select employee_id,first_name,salary,salary*12 as "new salary" from employees;
+
+--Q2. Display employees information whose present in department 20;
+	select first_name from employees where department_id=20
+
+--Q3. Display all job's available in a organization from employees table.
+	select job_id from employees;
+
+--Q4. Display Employees Full Name.
+	select first_name,last_name,first_name||last_name as "Full Name" from employees;
+
+--Q5. Display output eg. Abel's job designation is a SH_CLERK.
+	select first_name || q'['s job designation is a ]'|| job_id from employees;
+
+--Q6. Display first name department is department_id  eg. Abel department id is 90.
+	select first_name || q'[ department id is ]' || department_id from employees;
+
+--Q7. Display employee information whose name is david
+	select *from employees where first_name='David';
+
+--Q8.Display employees information whose job id is clerk
+	select *from employees where job_id like '%CLERK%';
+
+--Q9. Display employees who have hired on 23-nov-99.
+	select first_name from employees where hire_date='16-NOV-07';
+
+--Q10. Display Job ID belongs to department 30.
+	select job_id from employees where department_id=30;
+
+--Q11. Display actual departments present in employees.
+	select department_id from employees;
+
+--Q12. Describe the structure of department.
+	desc employees;
+
+--Q13. Display first_name ,last_name and name them full name and display information of employee whose last_name is Julia.
+	select employee_id,first_name,last_name,first_name||last_name as "Full Name" ,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,department_id from employees where first_name='Julia';
+
+-- Q14. Describe the structure of regions.
+	desc regions
+	select *from regions;
+
+-- Q15. Describe the structure of jobs.
+	desc jobs;
+
+-- Q16. Display actual value of job id from employees.
+	select job_id from employees;
+
+--Q17. Write a query to display all the record from employees table.
+	select *from employees;
+
+--Q18 Dispaly employee id ,last name ,salary and hiring date from an employees.
+	select employee_id,last_name,salary,hire_date from employees;
+
+-- Q19. Display department id and name.
+	select department_id,first_name from employees;
+
+
+--Q20. Describe locations table.
+	desc locations;
+
+/*
+Location Table
+Column	Null?	Type
+LOCATION_ID	NOT NULL	NUMBER(4,0)
+STREET_ADDRESS	 - 		VARCHAR2(40)
+POSTAL_CODE	 - 		VARCHAR2(12)
+CITY	NOT NULL		VARCHAR2(30)
+STATE_PROVINCE	 - 		VARCHAR2(25)
+COUNTRY_ID	 - 		CHAR(2)*/
+
+
+--Q21. Display city and postal code from location table.
+	select city,postal_code from locations;
+
+--Q22. Describe Job_history table.
+	desc job_history;
+
+/*
+TABLE JOB_HISTORY
+Column	Null?	Type
+EMPLOYEE_ID	NOT NULL	NUMBER(6,0)
+START_DATE	NOT NULL	DATE
+END_DATE	NOT NULL	DATE
+JOB_ID	NOT NULL		VARCHAR2(10)
+DEPARTMENT_ID	 - 		NUMBER(4,0)*/
+
+
+--Q23. Display employees id ,start date and end date from job history table.
+	select employee_id,start_date,end_date from job_history;
+
+--Q24. Discribe Jobs Table.
+	desc jobs;
+
+/*
+TABLE JOBS
+Column	Null?	Type
+JOB_ID	NOT NULL		VARCHAR2(10)
+JOB_TITLE	NOT NULL	VARCHAR2(35)
+MIN_SALARY	 - 		NUMBER(6,0)
+MAX_SALARY	 - 		NUMBER(6,0)*/
+
+
+--Q25. Display All Jobs availabels in jobs table.
+	select job_title from jobs;
+
+--Q26 . Describe regions table
+	desc regions;
+
+/*TABLE REGIONSResult Set 21
+Column	Null?	Type
+REGION_ID	NOT NULL	NUMBER
+REGION_NAME	 - 		VARCHAR2(25)
+*/
+
+
+--Q27. Display all information from regions table.
+	select *from regions;
+
+--Q28. Descirbe Countries table.
+	desc countries;
+
+
+/*TABLE COUNTRIES
+Column	Null?	Type
+COUNTRY_ID	NOT NULL	CHAR(2)
+COUNTRY_NAME	 - 		VARCHAR2(40)
+REGION_ID	 - 		NUMBER
+*/
+
+--Q29. Display country id ,name from countries table.
+	select country_id,country_name from countries;
+
+--Q30. Display first_name,last_name combine the name and give the alias as employee full name in starting letter should be capital .
+	select first_name,last_name,first_name||last_name as "Employee Full Name",initcap(first_name||last_name) from employees;
+
+--Q31. Display employees list whose last name starts with s and ends with o.
+	select last_name from employees where last_name like 'S%' and last_name like '%o';
+
+--Q32. Display first_name,Last_name combine the names and gives alias as full name present the name in lower case.
+	select first_name,last_name,first_name||last_name as "Full Name",LOWER(first_name||last_name) from employees;
+
+--Q33. Display Employees list whose salary is greater than 20000 or last name should be start with a.
+select first_name,last_name,salary from employees where salary >=20000 or last_name like 'a%';
+
+
+--Q34. Display System Date.
+	SELECT TO_CHAR
+    (SYSDATE, 'MM-DD-YYYY')
+     FROM DUAL;	   -- DUAL is a Virtual Table or a DUMMY Table Created when it get call it contains one row with varchar(2) datatype.
+
+
+--Q35. Display Employees list present from 01-01-96 to 29-01-96
+	select first_name from employees where hire_date between '01-JAN-06' and '29-JAN-06';
+
+--Q36*. Display system date and calculate date will be on Monday.
+	select to_char (sysdate ,'mm-dd-yy') from dual where (sysdate ,'mm-dd-yy')  +'08-00-00';
+/*
+14-11-23 current date  find monday
+
+13-11-23 monday
++
+08-00-00  next monday
+
+next monday-current system date=diff
+
+current sys date+diff =mondayw*/
+
+--Q37. Display hire_date from employees and 10 months in hire_date.
+		select first_name,hire_date from employees where hire_date in ('01-JUL-06');
+
+--Q38. Display employees list with employee id ,last name,salary ,2000,12000,20000.
+	select employee_id,last_name,salary from employees where salary in(2000,12000,20000);
+
+
+--Q39. Display last name only 5 character and the name should be in upper case.
+	select first_name,last_name,UPPER(first_name) from employees where last_name like '_____';
+
+--Q40. Display Employees list whose first name and last name should be combined and calculates its length of full name.
+	select first_name,last_name,length(first_name)  from employees;
+	
+
