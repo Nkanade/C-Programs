@@ -121,7 +121,8 @@ EMPLOYEE_ID	NOT NULL	NUMBER(6,0)
 START_DATE	NOT NULL	DATE
 END_DATE	NOT NULL	DATE
 JOB_ID	NOT NULL		VARCHAR2(10)
-DEPARTMENT_ID	 - 		NUMBER(4,0)*/
+DEPARTMENT_ID	 - 		NUMBER(4,0)
+*/
 
 
 --Q23. Display employees id ,start date and end date from job history table.
