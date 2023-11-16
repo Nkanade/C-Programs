@@ -31,6 +31,7 @@ SALARY	           	    -		NUMBER(8,2)
 COMMISSION_PCT	    	    -		NUMBER(2,2)
 MANAGER_ID	            -	 	NUMBER(6,0)
 DEPARTMENT_ID	    	    -	 	NUMBER(4,0)
+
 */
 
 --Q1. Display employee_id,first_name,salary and display new salary by multiplying salary by 12
