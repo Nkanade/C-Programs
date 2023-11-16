@@ -204,7 +204,9 @@ select first_name,last_name,salary from employees where salary >=20000 or last_n
 
 next monday-current system date=diff
 
-current sys date+diff =mondayw*/
+current sys date+diff =mondayw
+
+*/
 
 --Q37. Display hire_date from employees and 10 months in hire_date.
 		select first_name,hire_date from employees where hire_date in ('01-JUL-06');
