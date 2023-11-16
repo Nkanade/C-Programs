@@ -137,7 +137,8 @@ Column	Null?	Type
 JOB_ID	NOT NULL		VARCHAR2(10)
 JOB_TITLE	NOT NULL	VARCHAR2(35)
 MIN_SALARY	 - 		NUMBER(6,0)
-MAX_SALARY	 - 		NUMBER(6,0)*/
+MAX_SALARY	 - 		NUMBER(6,0)
+*/
 
 
 --Q25. Display All Jobs availabels in jobs table.
