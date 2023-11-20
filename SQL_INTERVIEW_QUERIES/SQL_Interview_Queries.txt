@@ -11,7 +11,7 @@ Step4. Click On Button "Run Script"
 Step5. Click On Button "Perform Actions"
 Step6. Click On Button "SQL Worksheet"
 Step7. Then There Will Be IDE Open Now You Can Write A Query and Run It.
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
 *******************************************************************************************************************************
 
 desc employees;				-- This command shows the table architecture.
