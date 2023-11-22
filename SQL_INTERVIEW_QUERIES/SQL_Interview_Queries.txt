@@ -295,3 +295,39 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 
 --Q16. List all the employees in department number 80 other than Karen
 	 select first_name, last_name from employees where department_id=80 and first_name !='Karen';
+
+
+--Q17. Retrive the last names and job of the employees working in deprtment number 10 .Display the result with 'employee-job' as column heading and arranging the column  '-' in between.
+	select  last_name,job_id,department_id as "employee-job" from employees where department_id=10;
+
+--Q18. List the name of employee and job of the employee who does not report anybody.
+		select first_name,job_id from employees where manager_id is null;
+
+-- Q19. List the employees not assigned to any departmnet
+		select first_name,last_name from employees where manager_id is null;
+
+-- Q20. List the details of employees whose salary is greater than 2000 and commision is null
+ 	select *from employees where salary>2000 and commission_pct is null;
+	
+
+--LAB EXCERSICE 5
+
+--Q1. Write a query to display system date.
+	select to_char(sysdate,'mm-dd-yy') from dual;
+
+-- Q2. The HR departments needs a report to display employee number ,last name,salary and salary increased by 16% (expressed as whole number ) for each employee. Label the 
+	-- column updated salary ?
+	select employee_id,last_name,salary,salary+round(salary*0.16) as "updated salary" from employees;
+
+--Q3. Modify the above query by adding a column that substract the old salary from new salary 
+	select employee_id,last_name,salary,salary-(salary+round(salary*0.16)) as "Old salary - new salary" from employees;
+
+-- Q4. write a query to display last name (with first letter in upper case and other letters in lower case) and length of last name
+		select initcap(last_name),length(last_name) from employees;
+
+--Q5. Modify the above query to filter only those name that starts with "J" or "M" give alis name to column.
+	 select first_name as "filter names" from employees where first_name like 'J%' or first_name like 'M%';
+
+
+
+
