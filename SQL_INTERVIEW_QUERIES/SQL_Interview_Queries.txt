@@ -216,3 +216,76 @@ current sys date+diff =mondayw*/
 	select first_name,last_name,length(first_name)  from employees;
 	
 
+-- Lab Excercise 4
+
+desc employees;
+
+select * from employees;
+
+/*TABLE EMPLOYEESResult Set 1
+Column	Null?	Type
+EMPLOYEE_ID	NOT NULL	NUMBER(6,0)
+FIRST_NAME	 - 	VARCHAR2(20)
+LAST_NAME	NOT NULL	VARCHAR2(25)
+EMAIL	NOT NULL	VARCHAR2(25)
+PHONE_NUMBER	 - 	VARCHAR2(20)
+HIRE_DATE	NOT NULL	DATE
+JOB_ID	NOT NULL	VARCHAR2(10)
+SALARY	 - 	NUMBER(8,2)
+COMMISSION_PCT	 - 	NUMBER(2,2)
+MANAGER_ID	 - 	NUMBER(6,0)
+DEPARTMENT_ID	 - 	NUMBER(4,0)*/
+
+--Q1.HR departmants wants a report of all employees with salry > 12000 only last name and salary sholuld be displayed.
+	select last_name,salary from employees where salary>12000;
+
+-- Q2. Display all the details of employee number 175.
+	select *from employees where employee_id=175;
+
+--Q3. Display last name and salary of all employees whose salary in the range of 5000 to 12000 modify the query to display details of employees not in this range.
+	select last_name ,salary from employees where salary between 5000 and 12000;
+	select last_name,salary from employees where salary not in 5000 and salary not in 12000;
+
+-- Q4. Display the last_name,job_id and hire date of all employees with last name "tylor" and "vargas" order the query in ascending order of hire date.
+	select last_name , job_id, hire_date from employees where last_name='Tylor' or last_name='Vargas' order by hire_date;
+
+-- Q5. Display the last name and department id of all employees in departments 20 or 70 in ascending alphabetical order 
+	select last_name,department_id from employees where department_id in (20,70) order by department_id;
+
+-- Q6. Display last name and salary of all employees whose salary in the range of 5000 and 12000 and in department number 10 or 20  gives alias name to coloumn.
+	 select last_name,salary from employees where salary between 5000 and 12000;
+
+Q7. Display the last name and hire date of all the employees whose were hired in 2006.
+	 select last_name,hire_date from employees where hire_date ='01-JAN-06' and hire_date='01-DEC-06';
+
+-- Q8. Display the last name and job title of all employees who do not have a manager.
+	select last_name,job_id from employees where manager_id is null;
+
+-- Q9. Display the last name ,salary and commission of all employees who earn commission .sort the data in descending order of commission.
+	select last_name,salary ,commission_pct from employees where commission_pct is not null order by commission_pct; 
+
+-- Q10. Display the last name and salary of employees who earn more than an amount that the user specifies after the prompt[use the substituion vriable]
+	select last_name from employees where salary>&sal_amount;
+
+--Q11. Prompt for manager id from the user .Display last name of all employees who report to the manager whose id is entered by the user.
+-- Sub Q.      Modify this query to prompt the user to sort the data on a perticular column [use substituiton variable]
+	select last_name ,&&manager_id from employees where &manager_id is not null;
+	select last_name,&&manager_id from employees where &manager_id is not null order by last_name;
+
+--Q12. Display the last names of all employees where the third letter of the name is 'a'
+	select first_name,last_name from employees where first_name like '__a%';
+
+--Q13. Dispaly the last names of all employees where both 'a' and 'i' are present in their last name.
+	select  last_name  from employees where last_name  like '%a%' and  last_name  like '%i%';
+
+
+-- Extra Pratice 
+
+--Q14. Display the last name ,job and salary for all employees whose job ids are either that of SA_REP or a ST_CLERK , whose salary are not equal to 2500,3500,7000.
+	select last_name ,job_id,salary from employees where job_id ='SA_REP' or job_id ='ST_CLERK' and salary not in(2500,3500,7000);
+
+-- Q15. Display the last_name ,salary and commission for all employees whose commission is 20%;
+	select last_name ,salary,commission_pct from employees where commission_pct=0.2;
+
+--Q16. List all the employees in department number 80 other than Karen
+	 select first_name, last_name from employees where department_id=80 and first_name !='Karen';
