@@ -329,5 +329,33 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 	 select first_name as "filter names" from employees where first_name like 'J%' or first_name like 'M%';
 
 
+--Q6. Rewrite the Query so that the user is prompted to enter the lettter that the last name starts with. for exapmle if the user enters "T" (captalized) when 
+	-- prompted for a letter the output should  show all employees whose last name starts with the letter "T".
+	select last_name from employees where last_name like '&col_name%';
+
+
+--Q7. Modify the query so that whichever case the user enters for the letter ,it should not affect the output [hint: The entered letter must be capitalized 
+--		before being proccesed by the select query.]
+		select last_name from employees where last_name like upper('&col_name%');
+
+--Q8*.  Find the duration of employeement for each employee [hint: calculate months between today and date on which he hired].Display the data sorted in ascending order 
+-- of duration column.
+	select  to_char(sysdate,'MON')-to_char(hire_date,'MON') from employees;
+
+--Q9. Display the employees last_name and indicates the amount of their salary with asterisks.each * indiactes * thousand dollar sort the data in ascending order of salary.
+	select last_name ,to_char(salary,'$99,999') from employees order by salary;
+
+--Q10. Display the last name and the number of weeks employeed for all employees in department 90 label the number of weeks column as "week worked".
+--		Truncate the number of weeks value to 0 decimal places.Show therecords in descending order of the week worked.
+	select last_name ,trunc((sysdate-hire_date)/7,0) as "week worked" from employees where department_id=90 order by  trunc((sysdate-hire_date)/7,0) desc ;
+
+--Q11.create a query to display the last name and salary for all employees. format the salary to be 12  character long ,left-padded with $ symbol .label the colunm salary.
+	select last_name ,salary,lpad(salary,12,'$') from employees;
+
+-- Extra Pratcice 
+
+--Q12. List the names of employees ,who are more than 2 year old in organization [hint use sysdate]?.
+	select 
+
 
 
