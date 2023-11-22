@@ -220,7 +220,7 @@ current sys date+diff =mondayw
 
 --Q40. Display Employees list whose first name and last name should be combined and calculates its length of full name.
 	select first_name,last_name,length(first_name)  from employees;
-	
+-----------------------------------------------------------------------------------------------------------------------------------------------	
 
 -- Lab Excercise 4
 
@@ -308,7 +308,7 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 
 -- Q20. List the details of employees whose salary is greater than 2000 and commision is null
  	select *from employees where salary>2000 and commission_pct is null;
-	
+----------------------------------------------------------------------------------------------------------------------------------------	
 
 --LAB EXCERSICE 5
 
