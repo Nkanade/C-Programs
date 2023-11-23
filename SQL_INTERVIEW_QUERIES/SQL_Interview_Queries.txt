@@ -221,7 +221,7 @@ current sys date+diff =mondayw
 --Q40. Display Employees list whose first name and last name should be combined and calculates its length of full name.
 	select first_name,last_name,length(first_name)  from employees;
 -----------------------------------------------------------------------------------------------------------------------------------------------	
-
+-- Filtering Data And Sorting...
 -- Lab Excercise 4
 
 desc employees;
@@ -309,7 +309,7 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 -- Q20. List the details of employees whose salary is greater than 2000 and commision is null
  	select *from employees where salary>2000 and commission_pct is null;
 ----------------------------------------------------------------------------------------------------------------------------------------	
-
+-- Single Row Functions...
 --LAB EXCERSICE 5
 
 --Q1. Write a query to display system date.
@@ -360,6 +360,29 @@ Q7. Display the last name and hire date of all the employees whose were hired in
         select  first_name,hire_date from employees where hire_date<='&date' and hire_date>='&date1';
 	undefine date
 	undefine date1
+
+--Q13. show what length names apper in the employees table .eliminate the duplicate lengths from the row returned.
+		select Distinct length(first_name) from employees;
+
+
+--Q14. list the name of employees whose name have exctly five character.
+		select first_name from employees where length(first_name)=5;
+
+------------------------------------------------------------------------------------------------------------------------------
+
+-- Using Conversion Functions And Conditional Expression.
+
+-- Lab Excercise- 6
+
+/*Q1. Create report that produces the following for each employees.
+<employee last name> earn monthly - <salary>but expect <2 times salary >after apraisal label the column apraised salary*/
+	select last_name ,round(salary/12),salary*2 as "Appraised salary" from employees;
+
+
+
+		
+
+		
 
 
 
