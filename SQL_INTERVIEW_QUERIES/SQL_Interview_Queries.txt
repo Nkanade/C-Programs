@@ -355,7 +355,12 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 -- Extra Pratcice 
 
 --Q12. List the names of employees ,who are more than 2 year old in organization [hint use sysdate]?.
-	select 
+	define date ='17-SEP-05'
+        	define date1 ='17-SEP-03'
+        select  first_name,hire_date from employees where hire_date<='&date' and hire_date>='&date1';
+	undefine date
+	undefine date1
+
 
 
 
