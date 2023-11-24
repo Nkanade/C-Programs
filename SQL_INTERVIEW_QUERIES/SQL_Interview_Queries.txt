@@ -381,7 +381,7 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 
 -- Q2*. Display each employees last name,hire_date,and salary review date,which is the first monday after five months of services.Label the column review.
 	-- format the dates to apper in a format  that is similar to "Monday ",the thirty-first of jully ,2023. [use to_char,next_day,add_months functions]
-	select last_name,hire_date,salary from employees where to_char(hire_date,'DAY')='MONDAY';
+	select  last_name,hire_date,next_day(add_months(hire_date,5),'MONDAY') as "salary_review_date" from employees;
 
 --Q3. Display employees last name and commission amount .Display "No Commission" in front of the  employees who does not get commission .Rename the commission column to "comm".
 	select last_name ,nvl(to_char(commission_pct),'No Commission') as "Comm" from employees;
@@ -389,7 +389,30 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 --Q4. Find the day of the week on which Davies Joined.
 	select to_char(hire_date,'D') from employees where first_name='David';
 
---Q5. Display the grade of all employees based on the values of the JOB_ID column
+--Q5. Display the grade of all employees based on the values of the JOB_ID column,using the foollwing table.[use case function]
+
+	JOB		Grade  
+	AD_PRES		A
+	ST_MAN		B
+	IT_PROG		C
+	SA_REP		D
+	ST_CLERK		E
+	None of the above    0
+--Q6. Modify the above query by using the serched case syntax.
+
+--Q7. Modify the above query by using the searched decode syntax.
+
+
+--Extra Practice
+
+--Q8. find out time of the day(hh24,mi,ss) on which Susan joined.
+	select first_name,to_char(hire_date,'HH24'),to_char(hire_date,'MI'),to_char(hire_date,'SS') from employees where first_name='Susan';
+
+--Q9. Find out the Quarter of the year the employees joined.
+	select first_name,to_char(hire_date,'Q') as "Quarter" from employees;
+-- Q10. How many months did the president work for the company? round to the nerest whole number of months.
+	
+
 
 
 
