@@ -222,7 +222,7 @@ current sys date+diff =mondayw
 	select first_name,last_name,length(first_name)  from employees;
 -----------------------------------------------------------------------------------------------------------------------------------------------	
 -- Filtering Data And Sorting...
--- Lab Excercise 4
+-- Lab Excercise - 4
 
 desc employees;
 
@@ -310,7 +310,7 @@ Q7. Display the last name and hire date of all the employees whose were hired in
  	select *from employees where salary>2000 and commission_pct is null;
 ----------------------------------------------------------------------------------------------------------------------------------------	
 -- Single Row Functions...
---LAB EXCERSICE 5
+--LAB EXCERSICE - 5
 
 --Q1. Write a query to display system date.
 	select to_char(sysdate,'mm-dd-yy') from dual;
@@ -412,6 +412,39 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 	select first_name,to_char(hire_date,'Q') as "Quarter" from employees;
 -- Q10. How many months did the president work for the company? round to the nerest whole number of months.
 	
+------------------------------------------------------------------------------------------------------------------------------------------------
+-- Using Aggregate Functions
+-- Lab Exercise - 7
+
+--Q1. Display the highest,lower ,sum and average of salary of all employees 
+--  Give alias name to the column round the output to the nearest whole number.
+	 select max(salary),min(salary),sum(salary),round(avg(salary)) as "avg salary" from employees;
+
+--Q2. Display the count of employees working in the organization.
+	select count(*) from employees;
+
+--Q3.Display the highest,lowest,sum and average of salary of all job types.
+	 select  job_id,max(salary),min(salary),sum(salary),avg(salary) from employees
+  	  group by job_id;
+
+--Q4. Display the count of employees job wise.
+	 select job_id,count(*)
+  	  from employees
+  	  group by job_id;
+
+--Q5. Display the count of employees for a particular job title.Accept the value from the user.[use substitution variable].
+	select job_id,count(*) 
+	from employees
+	where job_id like upper('&job_name')
+	group by job_id; 
+
+--Q6. Display the count of manager in the organization .[use manager_id column].
+	select manager_id, count(*) from employees
+	group by manager_id;
+
+--Q7. Find the difference maximum and minimum salaries. Rename the column as "Diff".
+	
+
 
 
 
