@@ -379,6 +379,16 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 	select last_name ,round(salary/12),salary*2 as "Appraised salary" from employees;
 
 
+-- Q2. Display each employees last name,hire_date,and salary review date,which is the first monday after five months of services.Label the column review.
+	-- format the dates to apper in a format  that is similar to "Monday ",the thirty-first of jully ,2023. [use to_char,next_day,add_months functions]
+	select last_name,hire_date,salary from employees where to_char(hire_date,'DAY')='MONDAY';
+
+
+
+
+
+
+
 
 		
 
