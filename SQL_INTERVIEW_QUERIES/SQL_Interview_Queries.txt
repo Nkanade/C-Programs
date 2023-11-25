@@ -418,14 +418,16 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 
 --Q1. Display the highest,lower ,sum and average of salary of all employees 
 --  Give alias name to the column round the output to the nearest whole number.
-	 select max(salary),min(salary),sum(salary),round(avg(salary)) as "avg salary" from employees;
+	select max(salary),min(salary),sum(salary),round(avg(salary)) as "avg salary" 
+	from employees;
 
 --Q2. Display the count of employees working in the organization.
 	select count(*) from employees;
 
 --Q3.Display the highest,lowest,sum and average of salary of all job types.
-	 select  job_id,max(salary),min(salary),sum(salary),avg(salary) from employees
-  	  group by job_id;
+	select  job_id,max(salary),min(salary),sum(salary),avg(salary) 
+	from employees
+	group by job_id;
 
 --Q4. Display the count of employees job wise.
 	 select job_id,count(*)
@@ -443,8 +445,56 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 	group by manager_id;
 
 --Q7. Find the difference maximum and minimum salaries. Rename the column as "Diff".
-	
+	select max(salary)-min(salary) as "DIFF" from employees;
 
+--Q8. Display the count of employees working per department in the organization 
+--       Display the department as well .  
+	 select department_id,count(*)
+  	  from employees
+  	  group by department_id;
+
+--Q9. Modify the above query to display only those departments that have count of 
+-- employees greater than 7.
+	select department_id,count(*)
+  	  from employees
+  	  group by department_id
+  	  having count(*)>7;
+
+--Q10. Display the manager number and the salary of the lowest-paid employee for that  manager.
+	 select  manager_id,min(salary)
+  	 from employees
+  	  group by manager_id;
+
+--Q11. Modify the above query to exclude anyone whose manager is not known.
+	 select  manager_id,min(salary)
+  	 from employees
+  	  where manager_id is not null
+  	  group by manager_id;
+
+--Q12. Modify the above query to exclude any groups where the minimum salary  is $6000 or less sort the
+-- ouput in descending order of salary.
+	select  manager_id,min(salary)
+  	 from employees
+  	  where manager_id is not null
+  	  group by manager_id
+  	  having max(salary)>6000;
+
+--Extra Pratice
+
+--Q13. Create a query to display the total number of employees and,of that total ,the number of employees
+--         hired in 2005,2006,2007 and 2008. Create appropriate column heading [use count,sum,decode,and to_char]
+
+
+--Q14. Find the maximum average salary of all departments.
+	 select max(avg(salary))
+  	  from employees
+  	group by department_id;
+
+--Q15. Display the department number ,department name, and the number of employees working in each department
+	a) Modify the query to include departments with less than 3 employees.
+	b) Modify the query to include departments with highest number of employees.
+
+ 
 
 
 
