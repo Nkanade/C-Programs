@@ -494,8 +494,16 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 	a) Modify the query to include departments with less than 3 employees.
 	b) Modify the query to include departments with highest number of employees.
 
+	 select department_id,department_name,count(*)
+  	  from departments
+  	  group by department_id,department_name;
  
+    a)-->	 select department_id,department_name,count(*)
+  	  from departments
+  	  group by department_id,department_name
+  	  having count(*)<3;
 
+    b)--> 
 
 
 
