@@ -503,8 +503,18 @@ Q7. Display the last name and hire date of all the employees whose were hired in
   	  group by department_id,department_name
   	  having count(*)<3;
 
-    b)--> 
+    b)-->  	select department_id,department_name,count(*)
+   	 from departments
+    	having count(*)>1
+    	group by department_id,department_name;
 
+--Q16. Modify the query to include departments with lowest number of employees.
+	 select department_id,department_name,count(*)
+  2  from departments
+  3  having count(*)<=1
+  4  group by department_id,department_name;
+
+--Q17. Write a query to count the numer of people in department 30 who receive a salary and the number of people who receive commission.
 
 
 
