@@ -517,6 +517,7 @@ Q7. Display the last name and hire date of all the employees whose were hired in
 --Q17. Write a query to count the numer of people in department 30 who receive a salary and the number of people who receive commission.
 
 
+--Q18. Who was the last employee hired in each department?
 
 
 
