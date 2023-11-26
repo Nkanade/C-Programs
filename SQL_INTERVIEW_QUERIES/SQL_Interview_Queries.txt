@@ -525,6 +525,55 @@ Q7. Display the last name and hire date of all the employees whose were hired in
   	  from employees
   	  group by department_id;
 
+--------------------------------------------------------------------------
+ --JOINS
+-- Lab Excercise- 8
+
+--Q1. Display the location of all departments .[use departments and locations table to write this query ]
+	select d.location_id,l.location_id
+   	from departments d
+  	join locations l
+  	on d.location_id=l.location_id;
+
+--Q2. Display last name ,salary ,departments number and departments name of all employees.
+	 select e.last_name,e.salary,e.department_id,d.department_id,d.department_name
+  	  from employees e
+  	  join departments d
+  	  on e.department_id=d.department_id;
+
+-- By using --> USING CLAUSE
+	 select e.last_name,e.salary,d.department_name
+  	  from employees e join  departments d
+  	  using (department_id);
+
+Q3. Display last name, salary ,department number and department name of all employees working in department number20 and 30.
+	 select e.last_name,e.salary,d.department_name
+  	  from employees e join departments d
+  	  on e.department_id=d.department_id
+  	  where e.department_id in(20,30) and d.department_id in(20,30);
+
+--By using --> USING CLAUSE
+
+	select e.last_name,e.salary,d.department_name
+  	  from employees e join departments d
+  	  using (department_id)
+  	 where department_id  in(20,30);
+
+--Q4. Display last name ,salary, department number and department name of all employees working in 'Finance ' department
+	select e.last_name,e.salary,d.department_name
+  	 from employees e join departments d
+  	 using (department_id)
+  	  where d.department_name='Finance';
+
+--Q5. Display the last_name ,job,department_number,department_name  for all employees who work in Toronto.[use employees ,departments and location table]
+	 select e.last_name,e.job_id,d.department_name,city
+  	  from employees e join departments d
+  	  using (department_id)
+  	  join locations l
+  	  using (location_id)
+  	  where l.city='Toronto';
+	
+
 
 		
 
