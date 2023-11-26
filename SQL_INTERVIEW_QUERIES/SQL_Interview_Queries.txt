@@ -585,8 +585,29 @@ Q3. Display last name, salary ,department number and department name of all empl
 	where e.manager_id is null;
 
 --Q8. Display last name of all employees who work in the  same department  as that of 'Higgins'.
+	 select e.last_name,d.department_name
+	  from employees e join departments d
+  	  using (department_id)
+  	  where e.last_name in('Higgins');
+
+--Q9. Display the employee's last name and salary of all employees who have salary greater than their manager
+	 select e.last_name,e.employee_id,e.manager_id,d.manager_id
+  	  from employees e join departments d
+  	  using (department_id)
+  	  where e.salary>d.manager_id;
+
+--Extra Practice
+
+Q1. Display the names of all employees hired after 'Talor'
+	 select first_name,hire_date
+  	  from employees
+  	  where hire_date>(select hire_date from employees where first_name='Taylor');
+
+
+
 
 		
+
 
 		
 
