@@ -572,6 +572,11 @@ Q3. Display last name, salary ,department number and department name of all empl
   	  join locations l
   	  using (location_id)
   	  where l.city='Toronto';
+
+--Q6. Display the last name and salary of employees along with their manager's nameand his salary rename the column
+	 select e.last_name,e.salary,d.department_id,e.manager_id,e.salary as "manager sal"
+  	  from employees e join departments d
+  	  on e.department_id=d.department_id;
 	
 
 
