@@ -577,6 +577,9 @@ Q3. Display last name, salary ,department number and department name of all empl
 	 select e.last_name,e.salary,d.department_id,e.manager_id,e.salary as "manager sal"
   	  from employees e join departments d
   	  on e.department_id=d.department_id;
+
+--Q7. Dispaly the last name and salary of employees along with their manager's name and his salary including king who has no manager .rename the column.
+
 	
 
 
