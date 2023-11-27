@@ -604,7 +604,7 @@ Q1. Display the names of all employees hired after 'Talor'
   	  where hire_date>(select hire_date from employees where first_name='Taylor');
 
 
-------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- Subqueries 
 -- Lab Excercise - 9
 
