@@ -604,6 +604,12 @@ Q1. Display the names of all employees hired after 'Talor'
   	  where hire_date>(select hire_date from employees where first_name='Taylor');
 
 
+------------------------------------------------------------------------------
+-- Subqueries 
+-- Lab Excercise - 9
+
+--Q1. Prompt the user to enter a last_name .Display the last name and salary of all employees in the same department as the employee whose name the user supplies excluding the name that user has entered.
+ 
 
 
 		
