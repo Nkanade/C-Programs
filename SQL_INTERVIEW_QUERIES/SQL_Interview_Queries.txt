@@ -609,14 +609,46 @@ Q1. Display the names of all employees hired after 'Talor'
 -- Lab Excercise - 9
 
 --Q1. Prompt the user to enter a last_name .Display the last name and salary of all employees in the same department as the employee whose name the user supplies excluding the name that user has entered.
- 
+ 	 select last_name,salary,department_id
+  	  from employees
+  	  where (last_name,department_id) in (select last_name,department_id from employees where last_name !='&col_na');
 
 
-		
+--Q2. Display the employee number ,last name and salary of all employees who earn more than the 
+-- average salary of all employees working the organization .sort the result in ascending order by salary.
+	 select employee_id,last_name,salary
+  	  from employees
+  	  where salary>(select avg(salary) from employees)
+  	  order by salary;
+
+-- Q3.Display the employee_id and last_name of all employees who work in any department with any employee whose last_name contains 'u'.
+	 select employee_id,last_name
+  	  from employees
+  	  where last_name like '%u%';
+	
+--Q4. Display the last name ,department number ,and job id  of all employees whose department location id is 1700.
+	select e.last_name ,e.job_id
+  	  from employees e join departments d
+  	  using (department_id)
+  	  where d.location_id=1700;
 
 
-		
 
+--Q5. Modify the above query to accept location id from user.
+	select e.last_name ,e.job_id
+  	  from employees e join departments d
+  	  using (department_id)
+  	  where d.location_id=&location_id;
 
+--Q6. Display the last name and salary of every employee who reports to King.
+	select e.last_name emp,e.salary sal,m.last_name mgr
+  	  from employees e join employees m
+  	  on e.employee_id=m.manager_id
+  	  where m.last_name='King';
+--Note :- Here we used the self join concept.
+
+--Q7. Display department number ,last name and job id for every employee in the finanace departmnet.
+
+	
 
 
