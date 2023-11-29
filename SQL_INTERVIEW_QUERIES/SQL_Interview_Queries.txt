@@ -648,7 +648,10 @@ Q1. Display the names of all employees hired after 'Talor'
 --Note :- Here we used the self join concept.
 
 --Q7. Display department number ,last name and job id for every employee in the finanace departmnet.
-
+	select e.last_name,e.job_id,d.department_name
+  	  from employees e join departments d
+  	  using (department_id)
+  	  where d.department_name='Finance';
 	
 
 
