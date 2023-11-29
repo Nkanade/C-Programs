@@ -652,6 +652,13 @@ Q1. Display the names of all employees hired after 'Talor'
   	  from employees e join departments d
   	  using (department_id)
   	  where d.department_name='Finance';
+
+--Q8. Display a list of all employees whose salary is more than the salary of any employee from department 60.
+	 select first_name,department_id,salary
+  	  from employees
+  	  where salary>(select max(salary)from employees where department_id=60);
+
+--Q9.Display the last name and salary of all employees who have salary greater than the average salary in their own department.[hint use correlated subquery].
 	
 
 
