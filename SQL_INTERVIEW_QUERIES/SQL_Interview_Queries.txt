@@ -627,11 +627,10 @@ Q1. Display the names of all employees hired after 'Talor'
   	  where last_name like '%u%';
 	
 --Q4. Display the last name ,department number ,and job id  of all employees whose department location id is 1700.
-	select e.last_name ,e.job_id
+	 select e.last_name ,e.job_id,e.department_id
   	  from employees e join departments d
-  	  using (department_id)
+  	  on e.department_id=d.department_id
   	  where d.location_id=1700;
-
 
 
 --Q5. Modify the above query to accept location id from user.
@@ -661,4 +660,6 @@ Q1. Display the names of all employees hired after 'Talor'
 --Q9.Display the last name and salary of all employees who have salary greater than the average salary in their own department.[hint use correlated subquery].
 	
 
+
+--Q10. List the names of thr employees drawing the higeshest salary.
 
