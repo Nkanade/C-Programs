@@ -683,3 +683,19 @@ Q1. Display the names of all employees hired after 'Talor'
   4  last_name varchar2(20),
   5  salary number(10),
   6  department_id number(10));
+
+--Q2. Discribe the structure of table.
+	desc myemp;
+
+--Q3. Create an Insert statement to insert a rowin myemp table.
+	 insert into myemp(employee_id,first_name,last_name,salary,department_id) values(101,'Mahesh','Bell',20000,501);
+	 insert into myemp(employee_id,first_name,last_name,salary,department_id) values(102,'Atul','Snow',10000,502);
+	insert into myemp(employee_id,first_name,last_name,salary,department_id) values(103,'Kapil','Roger',10400,503);
+
+--Q5. Check if the datais added in thetable myemp.
+	select *from myemp;
+
+
+
+
+
