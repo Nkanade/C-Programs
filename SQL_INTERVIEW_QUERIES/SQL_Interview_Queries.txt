@@ -662,4 +662,6 @@ Q1. Display the names of all employees hired after 'Talor'
 
 
 --Q10. List the names of thr employees drawing the higeshest salary.
-
+	 select first_name,salary
+  	  from employees
+  	  where salary<(select max(salary) as "max_sal" from employees);
