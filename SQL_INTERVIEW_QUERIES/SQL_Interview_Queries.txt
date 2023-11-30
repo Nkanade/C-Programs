@@ -665,3 +665,21 @@ Q1. Display the names of all employees hired after 'Talor'
 	 select first_name,salary
   	  from employees
   	  where salary<(select max(salary) as "max_sal" from employees);
+
+--Q11. Display the second maximum salary from the employees table.
+	 select first_name,salary
+  	  from employees
+  	  where salary<(select max(salary) as "max_sal" from employees);
+
+--------------------------------------------------------------------------------------------------
+-- DML
+--Lab Excercise -10
+
+--Q1. Create a table "MyEmp" with column -employee_id,last_name,first_name,salary,and department number.
+
+ create table myemp
+  2  (employee_id number(10),
+  3  first_name varchar2(20),
+  4  last_name varchar2(20),
+  5  salary number(10),
+  6  department_id number(10));
