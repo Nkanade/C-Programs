@@ -695,6 +695,40 @@ Q1. Display the names of all employees hired after 'Talor'
 --Q5. Check if the datais added in thetable myemp.
 	select *from myemp;
 
+--Q6. Create a resuable script to 3 more rows in the table.
+
+	 create table  info(first_name,last_name,salary,email)
+  	  AS
+  	  select first_name,last_name,salary,email
+  	  from employees;
+
+	 insert into info(first_name,last_name,salary,email)
+  	  select first_name,last_name,salary,email
+  	  from employees;
+
+--Q8. Update the last name of the employees inserted in the third row.
+	 update  myemp
+  	  set last_name='Vishal'
+  	  where employee_id=190;
+
+--Q10. Change the salary of all emplouees to 1000 where the salary is less than 900.
+  	update myemp
+    	set salary=1000
+  	  where salary<900;
+
+--Q12. Delete a record from the myemp table
+ 	delete from myemp
+  	  where employee_id=190;
+
+-- Extra Pratice
+
+--Q.1 Update the salary to 5000, for all the employees to whom the highest number of people report.
+
+
+
+
+
+
 
 
 
