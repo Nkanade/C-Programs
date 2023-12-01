@@ -723,10 +723,32 @@ Q1. Display the names of all employees hired after 'Talor'
 -- Extra Pratice
 
 --Q.1 Update the salary to 5000, for all the employees to whom the highest number of people report.
+	
+	UPDATE employees
+SET salary = 5000
+WHERE manager_id = (
+    SELECT manager_id
+    FROM (
+        SELECT manager_id, COUNT(employee_id) as num_reports
+        FROM employees
+        WHERE manager_id IS NOT NULL
+        GROUP BY manager_id
+        ORDER BY num_reports DESC
+    ) 
+    WHERE ROWNUM = 1
+);
 
 
 
+--Q2. Update the manager_id, of all employees to whom three employees report must report to job id 'PRESIDENT'
+	update employees
+  	  set manager_id=190
+  	  where job_id=(select job_id from employees where job_id='AD_PRES');
 
+--Q3. Give rise of 15% to all the employees from the accounting department.
+ 	 update employees
+  	  set salary=salary+salary*0.15
+  	  where job_id like'%ACCOUNT';
 
 
 
