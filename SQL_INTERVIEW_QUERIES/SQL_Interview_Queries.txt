@@ -750,6 +750,48 @@ WHERE manager_id = (
   	  set salary=salary+salary*0.15
   	  where job_id like'%ACCOUNT';
 
+------------------------------------------------------------------------------------------------------
+--DDL
+-- Lab Excercise -12
+
+--Q1. Create the mydept tab;e based on the follwing column definition.
+	deptno  number(7) primary key
+	deptname varchar2(25)  
+
+-->create table mydept
+     ( deptno number(7) primary key,
+         deptname varchar(25));
+
+--Q3. Create the myemp table based on the following column definition.
+	empid	number(7)	primary key
+	lastname	varchar2(25)	
+	firstname	varchar2(25)
+	deptid	number(7)	foreign key referring deptno column of mydept table
+
+-->
+SQL> create table myemp2
+    ( empid number(7) primary key,
+     last_name  varchar2(25),
+     first_name  varchar(25),
+     deptid  number(7) references  mydept(deptno));
+
+create table myemp2
+( empid number(7) primary key,
+last_name varchar2(25),
+first_name varchar2(25),
+deptid number(7),
+constraint deptid_key_fk  foreign key(deptid) references mydept(deptno));
+
+
+
+
+
+	
+
+
+
+
+
 
 
 
